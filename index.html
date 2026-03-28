@@ -8,56 +8,76 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-
     <header class="site-header">
-      <div class="container header-inner">
-        <p class="logo">Ganstro</p>
-        <nav class="nav" aria-label="Primary">
-          <ul class="nav-list">
-            <li><a href="#main">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
+      <img src="./ireland-flag-25.gif" alt="ireland flag" />
+      <img src="./ireland-flag-25.gif" alt="ireland flag" />
+      <img src="./ireland-flag-25.gif" alt="ireland flag" />
+      <img src="./ireland-flag-25.gif" alt="ireland flag" />
+      <img src="./ireland-flag-25.gif" alt="ireland flag" />
+
     </header>
 
-    <main id="main" class="main">
-      <div class="container">
-        <section class="hero" aria-labelledby="hero-heading">
-          <h1 id="hero-heading">Welcome</h1>
-          <p class="lead">
-            Replace this with your content. Styles and scripts are wired and ready.
-          </p>
-        </section>
-
-        <section id="about" class="section" aria-labelledby="about-heading">
-          <h2 id="about-heading">About</h2>
-          <p>
-            Edit <code>index.html</code>, <code>css/styles.css</code>, and
-            <code>js/main.js</code> to build your site.
-          </p>
-        </section>
-
-        <section id="contact" class="section" aria-labelledby="contact-heading">
-          <h2 id="contact-heading">Contact</h2>
-          <p>
-            <button type="button" class="btn" id="demo-btn" aria-controls="demo-output">
-              Run demo
-            </button>
-            <span id="demo-output" class="demo-output" role="status" aria-live="polite"></span>
-          </p>
-        </section>
+    <main>
+      <div>
+        <h1>Is Gan Stró! playing today?</h1>
       </div>
+
+  <img id="randomImage" alt="Random pic">
+
+  <p id="statusText"></p>
+
+  <script>
+  window.onload = function() {
+    // 1️⃣ Random image
+    const images = [
+      "pics/All of Gan Stró! says.png",
+      "pics/Boet says.png",
+      "pics/Fiddle Henjo yells.png",
+      "pics/Gan Stró! exclaims.png",
+      "pics/Henjo says.png",
+      "pics/Jaro whispers.png",
+      "pics/Omar and Jaro say.png",
+      "pics/Pieter and Henjo say.png",
+      "pics/Pieter, Boet, Selma and Jaro say.png"
+    ];
+
+    const randomIndex = Math.floor(Math.random() * images.length);
+    const selectedImage = images[randomIndex];
+
+    const imgElement = document.getElementById("randomImage");
+    if (imgElement) imgElement.src = selectedImage;
+
+    //  Get filename nicely
+    let filename = selectedImage.split("/").pop().split(".")[0];
+    filename = filename.replace(/_/g, " "); // replace underscores with spaces
+    // Optional: capitalize first letters
+    filename = filename.replace(/\b\w/g, c => c);
+
+    // Calculate days until March 17
+    const today = new Date();
+    let target = new Date(today.getFullYear(), 2, 17); // 2 = March
+    if (today > target) target = new Date(today.getFullYear() + 1, 2, 17);
+    const diffMs = target - today;
+    const diffDays = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+
+    // Insert into HTML
+    const statusElement = document.getElementById("statusText");
+    if (statusElement) {
+      statusElement.textContent = `${filename}: it's still ${diffDays} days until st patricks day!`;
+    }
+  };
+  </script>
+
+<p id="statusText"></p>
     </main>
 
-    <footer class="site-footer">
-      <div class="container">
-        <p class="footer-note">&copy; <span id="year"></span> Ganstro. All rights reserved.</p>
-      </div>
+    <footer class="site-header">
+      <img src="./clover.webp" alt="clover" />
+      <img src="./clover.webp" alt="clover" />
+      <img src="./clover.webp" alt="clover" />
+      <img src="./clover.webp" alt="clover" />
+      <img src="./clover.webp" alt="clover" />
+      <img src="./clover.webp" alt="clover" />
     </footer>
-
-    <script src="js/main.js" defer></script>
   </body>
 </html>
