@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Ganstro</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <p class="logo">Ganstro</p>
+        <nav class="nav" aria-label="Primary">
+          <ul class="nav-list">
+            <li><a href="#main">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="container">
+        <section class="hero" aria-labelledby="hero-heading">
+          <h1 id="hero-heading">Welcome</h1>
+          <p class="lead">
+            Replace this with your content. Styles and scripts are wired and ready.
+          </p>
+        </section>
+
+        <section id="about" class="section" aria-labelledby="about-heading">
+          <h2 id="about-heading">About</h2>
+          <p>
+            Edit <code>index.html</code>, <code>css/styles.css</code>, and
+            <code>js/main.js</code> to build your site.
+          </p>
+        </section>
+
+        <section id="contact" class="section" aria-labelledby="contact-heading">
+          <h2 id="contact-heading">Contact</h2>
+          <p>
+            <button type="button" class="btn" id="demo-btn" aria-controls="demo-output">
+              Run demo
+            </button>
+            <span id="demo-output" class="demo-output" role="status" aria-live="polite"></span>
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p class="footer-note">&copy; <span id="year"></span> Ganstro. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
