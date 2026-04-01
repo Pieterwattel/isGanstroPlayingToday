@@ -24,3 +24,10 @@
     }
   });
 })();
+
+
+const body = document.getElementById("body");
+body.addEventListener("click", function () {
+  // Handle body click event
+  alert("welcome to my website! ⸜(｡˃ ᵕ ˂ )⸝♡")
+});
